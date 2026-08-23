@@ -92,20 +92,20 @@ const kataPromosi = [
 // Fungsi Menampilkan Aplikasi Reguler + Iklan Slot Sela
 function renderApps(appsToDisplay) {
     const container = document.getElementById('app-list');
-    container.innerHTML =";
+    container.innerHTML ='';
 
     if (!appsToDisplay || appsToDisplay.length === 0) {
         container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #64748b;">Aplikasi tidak ditemukan.</p>';
         return;
     }
 
-    
+    let htmlContent = '';
 
     appsToDisplay.forEach((app, index) => {
         const iconUrl = app.icon || 'https://cdn-icons-png.flaticon.com/512/2589/2589175.png';
 
         // 1. Tambahkan Kartu Aplikasi Reguler ke string
-        container.innerHTML += `
+        htmlContent += `
             <div class="card">
                 <img src="${iconUrl}" 
                      alt="${app.title}"
