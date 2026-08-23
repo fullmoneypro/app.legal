@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+    color: #1e293b;
+}
+
+/* Header & Navigasi Sticky */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2563eb;
+}
+
+.logo span {
+    color: #0f172a;
+}
+
+/* Kolom Pencarian */
+.search-box input {
+    padding: 10px 18px;
+    width: 260px;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background-color: #f1f5f9;
+}
+
+.search-box input:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    width: 320px;
+}
+
+.section-title {
+    max-width: 1200px;
+    margin: 25px auto 5px;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Grid Kartu Aplikasi */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kartu Aplikasi Modern */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 12px 0 4px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rating {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+/* Tombol Download */
+.btn-download {
+    display: block;
+    background-color: #2563eb;
+    color: white;
+    padding: 8px 0;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    width: 100%;
+    margin-top: auto;
+    transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+    background-color: #1d4ed8;
+}
+
+/* Gaya Halaman Detail */
+.detail-wrapper {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.btn-back {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.detail-header {
+    display: flex;
+    gap: 25px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    align-items: center;
+}
+
+.detail-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+}
+
+.detail-info h1 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+}
+
+.developer {
+    color: #64748b;
+    margin: 4px 0;
+}
+
+.btn-download-large {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.detail-body {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    margin-top: 20px;
+}
+
+/* Styling Khusus Slot Iklan Natif */
+.card-ad {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    position: relative;
+}
+
+.ad-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.ad-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 150px;
+    color: #94a3b8;
+    font-size: 13px;
+}

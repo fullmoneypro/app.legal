@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ========================================== -->
+    <!-- 1. META SEO (UNTUK MESIN PENCARI GOOGLE)   -->
+    <!-- ========================================== -->
+    <title>App.Legal - Pusat Aplikasi Android Aman & Terpercaya</title>
+    <meta name="description" content="Temukan dan unduh berbagai aplikasi Android aman, populer, dan terverifikasi secara gratis di App.Legal. Platform distribusi aplikasi terbaik dan terpercaya dari Seven Labs.">
+    <meta name="keywords" content="download aplikasi, aplikasi android, app legal, unduh apk, aplikasi gratis, sponsor aplikasi">
+    <meta name="author" content="Seven Labs">
+    <meta name="robots" content="index, follow"> 
+
+    <!-- ========================================== -->
+    <!-- 2. OPEN GRAPH (UNTUK PREVIEW WA / FACEBOOK)-->
+    <!-- ========================================== -->
+    <meta property="og:title" content="App.Legal - Pusat Aplikasi Android">
+    <meta property="og:description" content="Temukan dan unduh berbagai aplikasi Android aman dan terverifikasi di App.Legal.">
+    <meta property="og:image" content="favicon.png"> 
+    <meta property="og:type" content="website">
+
+    <!-- ========================================== -->
+    <!-- 3. FAVICON (IKON TAB BROWSER)              -->
+    <!-- ========================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- ========================================== -->
+    <!-- 4. FILE CSS BOS (TETAP AMAN DI SINI)       -->
+    <!-- ========================================== -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+     <!-- Tambahan justify-content: space-between agar kiri dan kanan terpisah jauh -->
+     <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        
+        <!-- BAGIAN KIRI: Logo & Tombol Developer -->
+        <div style="display: flex; align-items: center; gap: 30px;">
+            <div class="logo">app.<span>legal</span></div>
+            <a href="developer.html" style="font-size: 14px; font-weight: 700; color: #2563eb; text-decoration: none; padding: 8px 20px; border: 1.5px solid #2563eb; border-radius: 50px; background-color: transparent; transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.backgroundColor='#2563eb'; this.style.color='#ffffff';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#2563eb';">
+                <span style="font-size: 16px;">💎</span> Developer
+            </a>
+        </div>
+        
+        <!-- BAGIAN KANAN: Kotak Pencarian -->
+        <div class="search-box" style="margin-left: auto;">
+            <input type="text" id="search-input" placeholder="Cari aplikasi di sini...">
+        </div>
+        
+     </div>
+    </header>
+
+    <main>
+        <!-- KOTAK KHUSUS APLIKASI SPONSOR -->
+        <div style="max-width: 1100px; margin: 0 auto 30px auto; border: 2px dashed #ff9800; border-radius: 15px; padding: 20px; background-color: #fffcf2; box-sizing: border-box;">
+            <!-- Di bawah ini ukuran hurufnya sudah dikecilkan menggunakan font-size: 16px; -->
+            <h3 style="margin-top: 0; color: #ff9800; font-family: sans-serif; text-align: left; padding-left: 10px; font-size: 16px;">⭐ Sponsor</h3>
+            
+            <!-- Wadah aplikasi sponsor -->
+            <div id="wadah-sponsor" class="container"> 
+                <!-- Aplikasi promosi akan muncul di sini -->
+            </div>
+        </div>
+
+        <!-- WADAH APLIKASI REGULER -->
+        <h2 class="section-title">🔥 Aplikasi Populer</h2>
+        <div id="app-list" class="container">
+            <!-- Aplikasi gonta-ganti akan muncul di sini dari Javascript -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+    <footer style="background: #ffffff; border-top: 1px solid #e2e8f0; padding: 40px 20px; margin-top: 50px; text-align: center; color: #64748b; font-size: 14px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <p><strong>App.Legal</strong> - Platform Distribusi Aplikasi Aman & Terpercaya.</p>
+        <div style="margin: 15px 0;">
+            <a href="privacy.html" style="color: #2563eb; text-decoration: none; margin: 0 10px;">Kebijakan Privasi</a> | 
+            <a href="syarat.html" style="color: #2563eb; text-decoration: none; margin: 0 10px;">Syarat & Ketentuan</a> | 
+            <a href="kontak.html" style="color: #2563eb; text-decoration: none; margin: 0 10px;">Hubungi Kami</a>
+        </div>
+        <p>&copy; 2026 App.Legal. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
