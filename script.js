@@ -89,19 +89,22 @@ const kataPromosi = [
     "Lihat selengkapnya"
 ];
 
-// Fungsi Menampilkan 200+ Aplikasi Reguler
+// Fungsi Menampilkan Aplikasi Reguler + Iklan Slot Sela
 function renderApps(appsToDisplay) {
     const container = document.getElementById('app-list');
-    container.innerHTML = '';
+    container.innerHTML =";
 
     if (!appsToDisplay || appsToDisplay.length === 0) {
         container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #64748b;">Aplikasi tidak ditemukan.</p>';
         return;
     }
 
+    
+
     appsToDisplay.forEach((app, index) => {
         const iconUrl = app.icon || 'https://cdn-icons-png.flaticon.com/512/2589/2589175.png';
 
+        // 1. Tambahkan Kartu Aplikasi Reguler ke string
         container.innerHTML += `
             <div class="card">
                 <img src="${iconUrl}" 
@@ -114,18 +117,17 @@ function renderApps(appsToDisplay) {
         `;
 
         // =====================================================================
-        // SLOT IKLAN BARU: DIRECT LINK DENGAN 10 TEKS ROTASI
+        // SLOT IKLAN: DIRECT LINK DENGAN 10 TEKS ROTASI (Setiap 8 item)
         // =====================================================================
         if ((index + 1) % 8 === 0) {
-            
-            // Logika pembagian agar mengambil kata dari urutan 0 sampai 9 berulang kali
             let indexIklan = Math.floor(index / 8); 
             let teksPromo = kataPromosi[indexIklan % kataPromosi.length]; 
             
             // MASUKKAN LINK MONETAG BOS DI BAWAH INI
-            let urlDirectLink = "https://omg10.com/4/11640268";
+            let urlDirectLink = "LINK_DIRECT_MONETAG_BOS_MASUKKAN_DISINI";
 
-            container.innerHTML += `
+            // 2. Tambahkan Kartu Iklan ke string yang sama
+            htmlContent += `
                 <div class="card card-ad" onclick="window.open('${urlDirectLink}', '_blank')" 
                      style="background: linear-gradient(145deg, #e0f2fe, #bae6fd); border: 2px dashed #38bdf8; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; cursor: pointer; transition: transform 0.2s;">
                     
@@ -143,6 +145,9 @@ function renderApps(appsToDisplay) {
             `;
         }
     });
+
+    // Masukkan seluruh hasil gabungan ke container SEKALI SAJA di akhir
+    container.innerHTML = htmlContent;
 }
 
 // Fitur Pencarian Lokal (Cari cepat khusus di dalam web)
