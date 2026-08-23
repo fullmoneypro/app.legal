@@ -17,7 +17,7 @@ fetch('apps.json')
         }
 
         // Kalau aplikasinya ketemu, ubah judul tab browser
-        document.title = `${app.title} - app.legal`;
+        document.title = `${app.title} - apk.legal`;
 
         // Tampilkan desain detail aplikasi Anda (HTML tidak saya ubah, tetap pakai desain Anda)
         container.innerHTML = `
