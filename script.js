@@ -75,81 +75,103 @@ function renderSponsorApps(apps) {
     });
 }
 
-// Daftar 10 Kata Sakti (Aman dari banned, mengundang penasaran)
-const kataPromosi = [
-    "Buat akun di sini",
-    "Lihat penawaran spesial",
-    "Cari tahu lebih lanjut",
-    "Buat akun",
-    "Lihat penawaran",
-    "Cari tahu",
-    "Daftar sekarang",
-    "Info selengkapnya",
-    "Cek di sini",
-    "Lihat selengkapnya"
-];
-
-// Fungsi Menampilkan Aplikasi Reguler + Iklan Slot Sela
+// Fungsi Menampilkan 200+ Aplikasi Reguler
 function renderApps(appsToDisplay) {
-    const container = document.getElementById('app-list');
-    container.innerHTML ='';
+    const container = document.getElementById('app-list');
+    container.innerHTML = '';
 
-    if (!appsToDisplay || appsToDisplay.length === 0) {
-        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #64748b;">Aplikasi tidak ditemukan.</p>';
-        return;
-    }
+    if (!appsToDisplay || appsToDisplay.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #64748b;">Aplikasi tidak ditemukan.</p>';
+        return;
+    }
 
-    let htmlContent = '';
+    appsToDisplay.forEach((app, index) => {
+        const iconUrl = app.icon || 'https://cdn-icons-png.flaticon.com/512/2589/2589175.png';
 
-    appsToDisplay.forEach((app, index) => {
-        const iconUrl = app.icon || 'https://cdn-icons-png.flaticon.com/512/2589/2589175.png';
+        container.innerHTML += `
+            <div class="card">
+                <img src="${iconUrl}" 
+                     alt="${app.title}"
+                     onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2589/2589175.png';">
+                <h3>${app.title}</h3>
+                <div class="rating">⭐ ${app.scoreText || app.score || '4.5'}</div>
+                <a href="detail.html?id=${app.appId}" class="btn-download">Lihat Detail</a>
+            </div>
+        `;
 
-        // 1. Tambahkan Kartu Aplikasi Reguler ke string
-        htmlContent += `
-            <div class="card">
-                <img src="${iconUrl}" 
-                     alt="${app.title}"
-                     onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2589/2589175.png';">
-                <h3>${app.title}</h3>
-                <div class="rating">⭐ ${app.scoreText || app.score || '4.5'}</div>
-                <a href="detail.html?id=${app.appId}" class="btn-download">Lihat Detail</a>
-            </div>
-        `;
-
-        // =====================================================================
-        // SLOT IKLAN: DIRECT LINK DENGAN 10 TEKS ROTASI (Setiap 8 item)
-        // =====================================================================
-        if ((index + 1) % 8 === 0) {
-            let indexIklan = Math.floor(index / 8); 
-            let teksPromo = kataPromosi[indexIklan % kataPromosi.length]; 
-            
-            // MASUKKAN LINK MONETAG BOS DI BAWAH INI
-            let urlDirectLink = "LINK_DIRECT_MONETAG_BOS_MASUKKAN_DISINI";
-
-            // 2. Tambahkan Kartu Iklan ke string yang sama
-            htmlContent += `
-                <div class="card card-ad" onclick="window.open('${urlDirectLink}', '_blank')" 
-                     style="background: linear-gradient(145deg, #e0f2fe, #bae6fd); border: 2px dashed #38bdf8; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; cursor: pointer; transition: transform 0.2s;">
-                    
-                    <span class="ad-label" style="position: absolute; top: 8px; right: 8px; font-size: 11px; background: #cbd5e1; color: #475569; padding: 2px 6px; border-radius: 4px;">Iklan</span>
-                    
-                    <h3 style="font-size: 17px; color: #0284c7; font-weight: 800; margin: 15px 0; line-height: 1.3;">
-                        ${teksPromo}
-                    </h3>
-                    
-                    <a href="${urlDirectLink}" target="_blank" 
-                       style="background: #0ea5e9; color: white; padding: 10px 0; width: 85%; border-radius: 50px; font-size: 14px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(14, 165, 233, 0.4);">
-                        Buka Halaman
-                    </a>
-                </div>
-            `;
-        }
-    });
-
-    // Masukkan seluruh hasil gabungan ke container SEKALI SAJA di akhir
-    container.innerHTML = htmlContent;
+        // Slot Iklan Natif setiap 8 kartu (Iklan tetap di posisinya)
+        if ((index + 1) % 8 === 0) {
+            container.innerHTML += `
+                <div class="card card-ad lazy-ad-slot" data-status="menunggu">
+                    <span class="ad-label">Iklan</span>
+                    <div class="ad-placeholder" style="width:100%; height:100%; display:flex; justify-content:center; align-items:center;">
+                        <p style="color:#94a3b8; font-size:12px;">Memuat Iklan...</p>
+                    </div>
+                </div>
+            `;
+        }
+    });
 }
 
+// =========================================================================
+// MESIN SENSOR IKLAN LAZY LOADING (KHUSUS MONETAG/ADS NETWORK)
+// =========================================================================
+function aktifkanSensorIklan() {
+    const semuaKotakIklan = document.querySelectorAll('.lazy-ad-slot');
+
+    // Mengecek apakah browser pengunjung mendukung fitur sensor (IntersectionObserver)
+    if ('IntersectionObserver' in window) {
+        
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                // Jika kotak iklan sudah mulai masuk/mendekati layar HP/Monitor
+                if (entry.isIntersecting) {
+                    let kotak = entry.target;
+                    
+                    // Pastikan iklannya belum pernah diload
+                    if (kotak.dataset.status === 'menunggu') {
+                        muatIklanMonetag(kotak);
+                        kotak.dataset.status = 'selesai'; // Kunci supaya gak diload 2 kali
+                        observer.unobserve(kotak); // Matikan sensor untuk kotak ini
+                    }
+                }
+            });
+        }, {
+            rootMargin: '300px', // PENTING: Load iklan saat jaraknya 300 pixel sebelum masuk layar (biar mulus dan gak kelihatan loading)
+            threshold: 0
+        });
+
+        // Pasang sensor ke semua kotak iklan yang ada di web
+        semuaKotakIklan.forEach(function(kotak) {
+            observer.observe(kotak);
+        });
+
+    } else {
+        // Jika browser pengunjung sangat jadul, load semua iklan sekaligus (fallback)
+        semuaKotakIklan.forEach(function(kotak) {
+            muatIklanMonetag(kotak);
+        });
+    }
+}
+
+// =========================================================================
+// FUNGSI UNTUK MEMASUKKAN KODE MONETAG KE DALAM KOTAK
+// =========================================================================
+function muatIklanMonetag(kotak) {
+    const tempatIklan = kotak.querySelector('.ad-placeholder');
+    tempatIklan.innerHTML = ''; // Hapus tulisan "Memuat Iklan..."
+
+    // ---> NANTI BOS MASUKKAN KODE SCRIPT DARI MONETAG DI SINI <---
+    // Contoh cara memasukkan script dari pihak ketiga:
+    
+    const scriptIklan = document.createElement('script');
+    scriptIklan.async = true;
+    
+    // Ganti URL ini dengan URL script Natif yang diberikan Monetag nanti
+    scriptIklan.src = "https://kodenya-monetag.com/script-iklan-natif.js"; 
+    
+    tempatIklan.appendChild(scriptIklan);
+}
 // Fitur Pencarian Lokal (Cari cepat khusus di dalam web)
 const searchInput = document.getElementById('search-input');
 
