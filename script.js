@@ -137,7 +137,7 @@ function renderApps(appsToDisplay) {
                 <div class="card card-ad" onclick="window.open('${urlDirectLink}', '_blank')" 
                      style="background: linear-gradient(145deg, #e0f2fe, #bae6fd); border: 2px dashed #38bdf8; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; cursor: pointer; transition: transform 0.2s;">
                     
-                    <span class="ad-label" style="position: absolute; top: 8px; right: 8px; font-size: 11px; background: #cbd5e1; color: #475569; padding: 2px 6px; border-radius: 4px;">Iklan</span>
+                    <span class="ad-label" style="position: absolute; top: 8px; right: 8px; font-size: 11px; background: #cbd5e1; color: #475569; padding: 2px 6px; border-radius: 4px;">Ad</span>
                     
                     <h3 style="font-size: 17px; color: #0284c7; font-weight: 800; margin: 15px 0; line-height: 1.3;">
                         ${teksPromo}
