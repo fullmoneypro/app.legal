@@ -37,24 +37,101 @@
 <body>
 
     <header>
-     <!-- Tambahan justify-content: space-between agar kiri dan kanan terpisah jauh -->
-     <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <style>
+        /* Pengaturan agar header rapi dan bisa menyesuaikan layar */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap; /* KUNCI: Membiarkan elemen turun ke bawah jika layar sempit */
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 15px; /* Jarak aman antar elemen saat layar mengecil */
+        }
         
-        <!-- BAGIAN KIRI: Logo & Tombol Developer -->
-        <div style="display: flex; align-items: center; gap: 30px;">
+        /* Pengaturan kelompok kiri (Logo + Tombol-tombol) */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Desain standar tombol (Developer & Info APK) */
+        .btn-header {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1.5px solid #2563eb;
+            border-radius: 50px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Efek saat tombol disentuh mouse */
+        .btn-header:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* Pengaturan Kotak Pencarian */
+        .search-box-header {
+            margin-left: auto;
+            flex-grow: 1;
+            max-width: 300px; /* Lebar maksimal di PC */
+        }
+
+        .search-box-header input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            outline: none;
+        }
+
+        /* KUNCI RESPONSIVE: Saat layar seukuran HP (di bawah 650px) */
+        @media (max-width: 650px) {
+            .nav-container {
+                justify-content: center; /* Tengahkan semua di HP */
+            }
+            .nav-left {
+                justify-content: center;
+            }
+            .search-box-header {
+                margin-left: 0;
+                max-width: 100%; /* Kotak pencarian penuhi lebar layar di baris kedua */
+            }
+        }
+    </style>
+
+    <div class="nav-container">
+        
+        <!-- BAGIAN KIRI: Logo & Tombol-tombol -->
+        <div class="nav-left">
             <div class="logo">apk.<span>legal</span></div>
-            <a href="/developer" style="font-size: 14px; font-weight: 700; color: #2563eb; text-decoration: none; padding: 8px 20px; border: 1.5px solid #2563eb; border-radius: 50px; background-color: transparent; transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.backgroundColor='#2563eb'; this.style.color='#ffffff';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#2563eb';">
+            
+            <!-- Tombol Developer -->
+            <a href="/developer" class="btn-header">
                 <span style="font-size: 16px;">💎</span> Developer
+            </a>
+
+            <!-- Tombol Info APK BARU -->
+            <a href="/info" class="btn-header">
+                <span style="font-size: 16px;">ℹ️</span> Info APK
             </a>
         </div>
         
         <!-- BAGIAN KANAN: Kotak Pencarian -->
-        <div class="search-box" style="margin-left: auto;">
+        <div class="search-box-header">
             <input type="text" id="search-input" placeholder="Cari aplikasi di sini...">
         </div>
         
-     </div>
-    </header>
+    </div>
+</header>
 
     <main>
         <!-- KOTAK KHUSUS APLIKASI SPONSOR -->
