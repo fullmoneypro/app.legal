@@ -8,7 +8,6 @@ const sponsorIds = [
     'com.fullmoney.aquarium_koin',
     'com.whatsapp',
     'com.tokopedia.tkpd',
-    'com.sevenlabs.jamuang',
 ];
 
 // Daftar 10 Kata Sakti (Aman dari banned, mengundang penasaran)
