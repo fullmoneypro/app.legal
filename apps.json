@@ -1,19 +1,5 @@
 [
   {
-    "title": "JamUang",
-    "appId": "com.sevenlabs.jamuang",
-    "url": "https://github.com/fullmoneypro/app.legal/releases/download/v2.1.2/jamuang.apk",
-    "icon": "logou.png",
-    "developer": "Seven Labs",
-    "currency": "IDR",
-    "price": 0,
-    "free": true,
-    "summary": "Aplikasi Jamuang untuk kebutuhan Anda.",
-    "scoreText": "4.9",
-    "score": 4.9,
-    "descriptionHTML": "<b>💰 Hasilkan Uang Saat Anda Istirahat Atau Tidur!</b><br>Ingin punya pemasukan tambahan tanpa harus repot? Selamat datang di <b>JamUang</b>, aplikasi revolusioner yang dirancang khusus untuk memberi Anda keuntungan pasif dengan cara paling santai.<br><br><b>🌙 Cara Kerja Sangat Mudah</b><br>1. Buka aplikasi JamUang saat istirahat atau sebelum Anda beranjak tidur.<br>2. Aktifkan fitur <b>Mode Tidur</b> dengan satu ketukan.<br>3. Letakkan ponsel Anda dan tinggal tidur nyenyak.<br><br><b>📈 Saldo Otomatis Bertambah</b><br>Selama Anda beristirahat atau tidur di malam hari, sistem JamUang akan bekerja secara otomatis untuk mengumpulkan pundi-pundi rupiah ke dalam akun Anda. Bangun tidur, saldo sudah bertambah!<br><br>Unduh sekarang secara gratis dan mulailah menghasilkan uang bahkan ketika Anda sedang terlelap!"
-  },
-  {
     "title": "Pinai: Asisten",
     "appId": "com.fullmoneypro.pinai",
     "url": "https://play.google.com/store/apps/details?id=com.fullmoneypro.pinai",
