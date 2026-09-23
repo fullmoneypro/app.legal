@@ -3,7 +3,7 @@
     "title": "Tap Coin",
     "appId": "com.pin.miner_coin",
     "url": "https://github.com/fullmoneypro/app.legal/releases/tag/v2.1.2",
-    "icon": "",
+    "icon": "https://github.com/fullmoneypro/app.legal/blob/main/tapcoin.png",
     "developer": "FullMoney",
     "scoreText": "4,9",
     "description": ""
