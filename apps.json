@@ -1,5 +1,14 @@
 [
   {
+    "title": "Tap Coin",
+    "appId": "com.pin.miner_coin",
+    "url": "https://github.com/fullmoneypro/app.legal/releases/tag/v2.1.2",
+    "icon": "",
+    "developer": "FullMoney",
+    "scoreText": "4,9",
+    "description": ""
+  },
+  {
     "title": "Pinai: Asisten",
     "appId": "com.fullmoneypro.pinai",
     "url": "https://play.google.com/store/apps/details?id=com.fullmoneypro.pinai",
