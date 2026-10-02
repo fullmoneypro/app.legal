@@ -4,6 +4,7 @@ let defaultApps = [];
 // KOTAK SPONSOR: Cukup ketik ID aplikasinya di sini
 // =========================================================================
 const sponsorIds = [
+    'com.pin.tappip',
     'com.pin.miner_coin',
     'com.fullmoneypro.pinai',
     'com.fullmoney.aquarium_koin',
