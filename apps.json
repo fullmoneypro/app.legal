@@ -1,5 +1,14 @@
 [
   {
+    "title": "TrikUang",
+    "appId": "com.fullmoney.trikuang",
+    "url": "https://github.com/fullmoneypro/app.legal/releases/download/v9.0.9/trikuang.apk",
+    "icon": "https://raw.githubusercontent.com/fullmoneypro/app.legal/main/trikuang.png",
+    "developer": "fullmoney",
+    "scoreText": "4,9",
+    "description": "【Bongkar Rahasia Keuangan & Vibrasi Kekayaan】<br>Ingin merdeka finansial? Trik Uang menghadirkan ratusan panduan eksklusif tingkat dewa, mulai dari strategi investasi, manajemen utang, hingga ilmu psikologi dan vibrasi penarik kekayaan. Lebih asyik lagi, kamu tidak perlu capek membaca karena ada fitur asisten suara cerdas yang siap membacakan rahasianya untukmu layaknya mendengarkan podcast!<br><br>【Catat Pengeluaran & Hitung Gaji Otomatis】<br>Bukan cuma teori! Aplikasi ini dilengkapi fitur Catatan Keuangan Pribadi anti-ribet untuk memantau pemasukan dan pengeluaran harianmu. Ditambah lagi, tersedia fitur Kalender Kerja pintar yang bisa merekap absensi harian, menghitung lembur, dan mengestimasi total gaji bulananmu secara otomatis. Semua urusan uang selesai dalam satu genggaman.<br><br>【Praktis, Super Ringan & Desain Elegan】<br>Dirancang dengan tema gelap (Dark Mode) bernuansa hijau zamrud yang mewah, nyaman di mata, dan pastinya sangat ringan sehingga tidak membuat HP kamu lemot. Dapatkan semua ilmu finansial bernilai jutaan rupiah dan alat manajemen keuangan ini secara gratis. Yuk, ubah pola pikirmu, tarik energi kelimpahan, dan capai masa depan mapan dengan aplikasi Trik Uang sekarang juga!"
+  },
+  {
     "title": "Host Browser",
     "appId": "com.awragensi.hostbrowser",
     "url": "https://github.com/fullmoneypro/app.legal/releases/download/v1.0.1+1/hostbrowser.apk",
