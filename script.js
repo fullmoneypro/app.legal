@@ -11,8 +11,6 @@ const sponsorIds = [
     'com.pin.miner_coin',
     'com.fullmoneypro.pinai',
     'com.fullmoney.aquarium_koin',
-    'com.whatsapp',
-    'com.tokopedia.tkpd',
 ];
 
 // Daftar 10 Kata Sakti (Aman dari banned, mengundang penasaran)
