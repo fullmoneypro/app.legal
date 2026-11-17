@@ -5,6 +5,7 @@ let defaultApps = [];
 // =========================================================================
 const sponsorIds = [
     'com.awragensi.hostbrowser',
+    'com.fullmoney.trikuang',
     'com.coinikan.app',
     'com.pin.tappip',
     'com.pin.miner_coin',
